@@ -13,7 +13,7 @@ export function Main() {
       <h2 className="text-3xl md:text-5xl  font-black bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
         FullStack Developer
       </h2>
-      <Link target="_blank" className="w-full flex justify-center" href="/Currículo%20Eduardo%20Gomes%20v.08.pdf">
+      <Link target="_blank" className="w-fit flex justify-center" href="/Currículo%20Eduardo%20Gomes%20v.08.pdf">
         <button className="bg-inherit border border-double rounded-full p-3 flex items-center justify-center gap-2 my-5 hover:bg-gray-900 ease-in-out duration-100 w-40 hover:outline-double outline-blue-200 cursor-pointer">
           <Download /> Get resume
         </button> 

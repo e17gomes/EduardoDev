@@ -71,11 +71,11 @@ const Experience = () => {
     );
 
     return (
-        <div className="py-7 flex items-center flex-col w-full max-w-xl mx-auto gap-10">
+        <div className="py-7 flex items-center flex-col w-full max-w-xl mx-auto gap-10 min-h-[85dvh]">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl flex gap-2 items-center font-black m-auto underline  bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
                 EXPERIENCE
             </h1>
-                 <BriefcaseBusiness  />
+                 <BriefcaseBusiness size={32}  />
 
             <section className="w-full">
                 <>
@@ -130,8 +130,8 @@ const Experience = () => {
 
 
                     <div className="space-x-5 p-10 flex items-center justify-center mt-10">
-                    <Link href={`/`} className="p-4 border rounded-full bg-gray-900 hover:bg-gray-800">Go to projects</Link> 
-                    <Link href={`/`}  className="p-4 border rounded-full bg-gray-900 hover:bg-gray-800">Go to about me</Link> 
+                    <Link href={`/`} className="p-3 border rounded-full bg-gray-900 hover:bg-gray-800">Go to projects</Link> 
+                    <Link href={`/`}  className="p-3 border rounded-full bg-gray-900 hover:bg-gray-800">Go to about me</Link> 
                     </div>
 
             </section>
