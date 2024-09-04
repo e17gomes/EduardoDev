@@ -1,6 +1,10 @@
+'use client'
 import { Code } from 'lucide-react';
+import { useState } from 'react'; // Importar useState para controle de hover
 
 export default function ProjectsGrid() {
+  const [hoverIndex, setHoverIndex] = useState(null); // Estado para armazenar o índice do item hoverizado
+
   const projects = [
     {
       title: "Cryptotos",
@@ -37,15 +41,21 @@ export default function ProjectsGrid() {
       linkWeb: "/project-5", // Link para visualização
       linkSrc: "/project-5", // Link para o código-fonte
     },
+    {
+      title: "AnyDex",
+      description: "Facilitar a visualização e compreensão de dados geográficos e econômicos globais com uma ferramenta simples e eficaz.",
+      imageUrl: "/path-to-image-2.jpg",
+      linkWeb: "/project-5", // Link para visualização
+      linkSrc: "/project-5", // Link para o código-fonte
+    },
     // Add more projects here
-    // after take the projects of github 
   ];
 
   return (
     <section className="py-12">
       <div className="container mx-auto px-4">
-        <div className='flex flex-col justify-center items-center '>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl flex gap-2 font-black m-auto bg-gadient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
+        <div className='flex flex-col justify-center items-center mb-5'>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl flex gap-2 font-black m-auto bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
             My Projects
           </h2>
           <Code size={32} />
@@ -55,26 +65,35 @@ export default function ProjectsGrid() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-inherit border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              onMouseEnter={() => setHoverIndex(index)}
+              onMouseLeave={() => setHoverIndex(null)}
+              className={`bg-inherit border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 relative`}
             >
               <div className="p-4">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-700 mb-4 line-clamp-3 hover:line-clamp-none ease-in-out cursor-auto">{project.description}</p>
-                <section className="flex gap-4">
+                <p className={`text-gray-700 mb-4 transition-all duration-300 ${hoverIndex === index ? 'line-clamp-none' : 'line-clamp-3'}`}>
+                  {project.description}
+                </p>
+                <section className="flex gap-4 text-sm justify-end">
                   <a
                     href={project.linkWeb}
-                    className="text-indigo-600 ease-in-out font-semibold hover:text-indigo-800"
+                    className="text-indigo-600 border p-1 rounded-md ease-in-out font-semibold hover:text-indigo-800"
                   >
                     View Project
                   </a>
                   <a
                     href={project.linkSrc}
-                    className="text-gray-100 ease-in-out font-semibold hover:text-gray-300"
+                    className="text-gray-100 border p-1 rounded-md ease-in-out font-semibold hover:text-gray-300"
                   >
                     Source Code
                   </a>
                 </section>
               </div>
+              {projects.length - 1 === index &&
+                <div className='p-4 flex items-center justify-center absolute inset-0 bg-gray-100 bg-opacity-70'>
+                  <span className="text-xl font-semibold text-gray-800">Coming soon</span>
+                </div>
+              }
             </div>
           ))}
         </div>
