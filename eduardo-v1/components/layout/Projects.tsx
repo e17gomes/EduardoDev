@@ -3,7 +3,7 @@ import { Code } from 'lucide-react';
 import { useState } from 'react'; // Importar useState para controle de hover
 
 export default function ProjectsGrid() {
-  const [hoverIndex, setHoverIndex] = useState(null); // Estado para armazenar o índice do item hoverizado
+  const [hoverIndex, setHoverIndex] = useState<null|Number>(); // Estado para armazenar o índice do item hoverizado
 
   const projects = [
     {
@@ -43,12 +43,12 @@ export default function ProjectsGrid() {
     },
     {
       title: "AnyDex",
-      description: "Facilitar a visualização e compreensão de dados geográficos e econômicos globais com uma ferramenta simples e eficaz.",
+      description: "***************************************************************************.",
       imageUrl: "/path-to-image-2.jpg",
       linkWeb: "/project-5", // Link para visualização
       linkSrc: "/project-5", // Link para o código-fonte
     },
-    // Add more projects here
+    // more projects 
   ];
 
   return (
@@ -65,16 +65,14 @@ export default function ProjectsGrid() {
           {projects.map((project, index) => (
             <div
               key={index}
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
-              className={`bg-inherit border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 relative`}
+              className={`bg-inherit border rounded-lg shadow-md h-46 overflow-hidden hover:shadow-xl transition-shadow duration-300 relative`}
             >
               <div className="p-4">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className={`text-gray-700 mb-4 transition-all duration-300 ${hoverIndex === index ? 'line-clamp-none' : 'line-clamp-3'}`}>
+                <p className={`text-gray-700 mb-4 transition-all duration-300  line-clamp-3 ${hoverIndex===index ?'line-clamp-none':''}`}>
                   {project.description}
                 </p>
-                <section className="flex gap-4 text-sm justify-end">
+                <section className="flex gap-4 text-sm justify-end items-end ">
                   <a
                     href={project.linkWeb}
                     className="text-indigo-600 border p-1 rounded-md ease-in-out font-semibold hover:text-indigo-800"
@@ -90,8 +88,8 @@ export default function ProjectsGrid() {
                 </section>
               </div>
               {projects.length - 1 === index &&
-                <div className='p-4 flex items-center justify-center absolute inset-0 bg-gray-100 bg-opacity-70'>
-                  <span className="text-xl font-semibold text-gray-800">Coming soon</span>
+                <div className='p-4 select-none flex items-center justify-center absolute inset-0 backdrop-blur-xl bg-opacity-70'>
+                  <span className="text-xl font-semibold text-gray-200">Coming soon</span>
                 </div>
               }
             </div>
