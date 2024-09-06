@@ -13,7 +13,7 @@ const NavDesktop = () => {
         {route:'Experience', link: '/experience', icon:<Menu/>},
         {route:'About Me', link: '/', icon:<Menu/>}]
     return (
-        <header className="sticky top-0 border-b p-6 flex items-center justify-between select-none bg-inherit/90 backdrop-blur">
+        <header className="sticky top-0 border-b p-6 flex items-center justify-between select-none bg-inherit/90 backdrop-blur z-50">
             <nav className="px-2 flex items-center gap-10">
             <div className="bg-gradient-to-br from-indigo-600 via-blue-400 to-gray-800 w-7 flex items-center justify-center rounded-full">
             <p className="font-extrabold text-xl text-white/90">E</p>
