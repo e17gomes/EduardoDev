@@ -25,7 +25,7 @@ const TechIcons = [
   },
   {
     name: "Tailwind CSS",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+    url: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg"
   },
   {
     name: "Bootstrap",
@@ -45,7 +45,7 @@ const TechIcons = [
   },
   {
     name: "NestJS",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+    url: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/nestjs/nestjs-original.svg"
   },
   {
     name: "REST API",
