@@ -12,12 +12,15 @@ const NavDesktop = () => {
         {route:'Projects', link: '/projects', icon:<Menu/>}, 
         {route:'Experience', link: '/experience', icon:<Menu/>},
         {route:'About Me', link: '/', icon:<Menu/>}]
+
+
+        
     return (
         <header className="sticky top-0 border-b p-6 flex items-center justify-between select-none bg-inherit/90 backdrop-blur z-50">
             <nav className="px-2 flex items-center gap-10">
-            <div className="bg-gradient-to-br from-indigo-600 via-blue-400 to-gray-800 w-7 flex items-center justify-center rounded-full">
-            <p className="font-extrabold text-xl text-white/90">E</p>
-            </div>
+            <Link href={'/'} className="bg-gradient-to-br from-indigo-600 via-blue-400 to-gray-800 w-7 flex items-center justify-center rounded-full">
+            <p className="font-extrabold text-xl text-white/90" >E</p>
+            </Link>
             <div
             className="space-x-7"
             >
@@ -55,13 +58,13 @@ const NavMobile = () => {
         {route:'Experience', link: '/experience', icon:<Menu/>},
         {route:'About Me', link: '/about', icon:<Menu/>}]
 
-
+  
     return (
         <header className="sticky top-0 left-0 right-0  p-4 shadow-md z-50 border-b backdrop-blur bg-inherit " >
         <nav className="flex justify-between items-center w-[92%] mx-auto select-none">
-        <div className="bg-gradient-to-br from-indigo-600 via-blue-400 to-gray-800 w-8 flex items-center justify-center rounded-full">
+        <Link href={'/'} className="bg-gradient-to-br from-indigo-600 via-blue-400 to-gray-800 w-8 flex items-center justify-center rounded-full">
             <p className="font-extrabold text-2xl text-white/90">E</p>
-            </div>
+            </Link>
 
             <Drawer.Root direction="right" open={isOpen} onOpenChange={setIsOpen}>
                 <Drawer.Trigger asChild>
@@ -90,7 +93,9 @@ const NavMobile = () => {
                             <button className="p-2 m-auto w-4/6 border border-green-300 rounded-md">LOGIN 2</button>
                             <button className="p-2 m-auto w-4/6 border border-green-300 rounded-md">LOGIN 1</button>
                         </section>
-                        {rota.map((rotas,key)=>(<Link href={rotas.link} key={key} className="border-b border-blue-400 py-3 px-1 opacity-50 hover:opacity-100">{rotas.route}</Link>))}
+                        {rota.map((rotas,key)=>(<Link
+                         onClick={() => setIsOpen(false)}
+                        href={rotas.link} key={key} className="border-b border-blue-400 py-3 px-1 opacity-50 hover:opacity-100">{rotas.route}</Link>))}
                             <p className='m-auto my-20 p-4 bg-gray-900 rounded-full pulse w-fit border-double border opacity-50 hover:opacity-100 '>Contate-me</p>
                     </Drawer.Content>
                 </Drawer.Portal>

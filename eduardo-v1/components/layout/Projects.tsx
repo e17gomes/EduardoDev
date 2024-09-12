@@ -52,7 +52,7 @@ export default function ProjectsGrid() {
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-12 container ">
       <div className="container mx-auto px-4">
         <div className='flex flex-col justify-center items-center mb-5'>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl flex gap-2 font-black m-auto bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
@@ -69,7 +69,7 @@ export default function ProjectsGrid() {
             >
               <div className="p-4">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className={`text-gray-700 mb-4 transition-all duration-300  line-clamp-3 ${hoverIndex===index ?'line-clamp-none':''}`}>
+                <p className={`text-gray-700 mb-4 transition-all duration-300 p-1 md:p-0 md:line-clamp-3`}>
                   {project.description}
                 </p>
                 <section className="flex gap-4 text-sm justify-end items-end ">

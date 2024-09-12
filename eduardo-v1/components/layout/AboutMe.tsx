@@ -6,7 +6,7 @@ import TechIcons from '@/app/about/static/media';
 
 const AboutMe = () => {
   return (
-    <section className="grid  grid-cols-1.+ sm:grid-cols-2 items-center justify-center min-h-[80dvh] py-4 container ">
+    <section className="grid  grid-cols-1  sm:grid-cols-2 items-center justify-center min-h-[80dvh] py-4 container ">
 
 
       <article>
@@ -52,33 +52,35 @@ const AboutMe = () => {
         </div>
       </article>
 
-      <article className='col-span- row-span-2 min-h-72 mx-4'>
+      <article className='col-span- row-span-2 mx-4'>
         <p className="text-xs md:text-sm flex p-1 items-center gap-1">
           <MapPin size={14} />  São Paulo, Brazil.
         </p>
-        <div className="border overflow-hidden flex items-center justify-center rounded-md s">
+        <div className="border scale overflow-hidden flex items-center justify-center rounded-md  ">
           <Globe />
         </div>
       </article>
 
       <article>
-        <p className="text-xs select-none md:text-sm rounded-md flex items-center gap-1">
+        <p className="text-xs select-none md:text-sm p-1 flex items-center gap-1">
           <Info size={14} />  Stacks
         </p>
-        <div className="h-40 border select-none p-4 rounded-md overflow-hidden flex items-center justify-center">
-          <ul className="flex h-full items-center justify-center space-x-4 animate-moving w-64  ">
-            {[...TechIcons, ...TechIcons].map((icon, index) => (
-              <li key={index} className="flex-shrink-0 ">
-                <Image
-                  alt={icon.name} // Use o nome do ícone como o texto alternativo
-                  src={icon.url}  // A URL do ícone
-                  width={60}      // Defina a largura da imagem (ajuste conforme necessário)
-                  height={60}     // Defina a altura da imagem
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
+      
+        <div className="h-36  bg-gray-800 select-none p-3 overflow-hidden flex items-center justify-center scroll-container w-full">
+      <ul className="flex items-center justify-center space-x-4 animate-scrollInfinite h-40 p-4 min-w-[200%]">
+        {[...TechIcons, ...TechIcons].map((icon, index) => (
+          <li key={index} className="flex-shrink-0 drop-shadow-md">
+            <Image
+              alt={icon.name}
+              src={icon.url}
+              width={50}
+              height={50}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+
       </article>
 
 

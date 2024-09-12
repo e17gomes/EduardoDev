@@ -1,7 +1,6 @@
 "use client"
 
 import { BriefcaseBusiness } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 
 
@@ -17,15 +16,17 @@ const Experience = () => {
         isActive: boolean;
         onToggle: () => void;
     };
-    
-    //Guardar numa pasta de constantes dps
-    const softskills = [
-        "a","b","c","d"
-    ]
-    const hardskills = [
-        "a","b","c","d"
-    ]
 
+    //Guardar numa pasta de constantes dps
+    const services = [
+    'Desenvolvimento Front-End',
+    'Desenvolvimento Full-Stack',
+    'Otimização e Performance',
+    'Automação e DevOps',
+    'Consultoria e Manutenção',
+    'E-commerce e Soluções Customizadas'
+
+    ]
     const experiences = [
         {
             role: 'Front-End Developer',
@@ -49,13 +50,13 @@ const Experience = () => {
 
     const CardXp: React.FC<Exp> = ({ className, role, company, describe, time, techs, isActive, onToggle }) => (
         <div className={`${className} mt-5 mb-10 px-4 sm:px-6 lg:px-8`}>
-            <h3 
-                onClick={onToggle} 
+            <h3
+                onClick={onToggle}
                 className={`cursor-pointer text-center text-xl sm:text-2xl lg:text-3xl font-bold mb-2 `}
             >
-                {role} 
-                <span className={`ml-2 text-white/85  ${isActive ? 'text-blue-500 ' : 'opacity-85'}`}> 
-                {!isActive ? '+' : '-'}
+                {role}
+                <span className={`ml-2 text-white/85  ${isActive ? 'text-blue-500 ' : 'opacity-85'}`}>
+                    {!isActive ? '+' : '-'}
                 </span>
             </h3>
             <article className={`${!isActive ? 'hidden' : 'block'} transition-all duration-300 ease-in-out text-center`}>
@@ -71,11 +72,11 @@ const Experience = () => {
     );
 
     return (
-        <div className="py-7 flex items-center flex-col w-full max-w-xl mx-auto gap-10 min-h-[85dvh]">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl flex gap-2 items-center font-black m-auto underline  bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
+        <div className="py-5 flex items-center flex-col w-full max-w-xl mx-auto gap-2 min-h-[80dvh]">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl flex items-center font-black m-auto  bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
                 EXPERIENCE
             </h1>
-                 <BriefcaseBusiness size={32}  />
+            <BriefcaseBusiness size={32} />
 
             <section className="w-full">
                 <>
@@ -93,46 +94,59 @@ const Experience = () => {
                     ))}
                 </>
 
- <section className='custom-scrollbar m-auto border rounded-md h-32 w-3/6 p-2 flex flex-col items-center '>
-                {/* Soft Skills */}
-  <p className="text-center text-xl font-semibold mb-2">My Soft Skills</p>
-        <ul className="list-inside text-center text-gray-700 mb-8">
-          <li>Communication</li>
-          <li>Teamwork</li>
-          <li>Problem-Solving</li>
-          <li>Adaptability</li>
-          <li>Time Management</li>
-        </ul>
-</section>
 
-<section className='custom-scrollbar m-auto border rounded-md h-32 w-3/6 p-2 flex flex-col items-center mt-4'>
+                {/*Skills  */}
+                <div className="flex flex-col md:flex-row items-center gap-1">
+                <section className='custom-scrollbar m-auto border rounded-md h-32 w-3/6 p-2 flex flex-col items-center '>
+                    {/* Soft Skills */}
+                    <p className="text-center text-xl font-semibold mb-2">My Soft Skills</p>
+                    <ul className="list-inside text-center text-gray-700 mb-8">
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Problem-Solving</li>
+                        <li>Adaptability</li>
+                        <li>Time Management</li>
+                    </ul>
+                </section>
 
-        {/* Hard Skills */}
-        <p className="text-center text-xl font-semibold mb-2">My Hard Skills</p>
-        <ul className="list-inside text-center text-gray-700">
-          <li>React</li>
-          <li>Next.js</li>
-          <li>TypeScript</li>
-          <li>Node.js</li>
-          <li>Tailwind CSS</li>
-          <li>React</li>
-          <li>Next.js</li>
-          <li>TypeScript</li>
-          <li>Node.js</li>
-          <li>Tailwind CSS</li>
-          <li>React</li>
-          <li>Next.js</li>
-          <li>TypeScript</li>
-          <li>Node.js</li>
-          <li>Tailwind CSS</li>
-        </ul>
-</section>
+                        <section className="border rounded-md h-32 w-3/6 p-2 overflow-hidden custom-scrollbar">
 
+                        <p className="text-center text-xl font-black mb-2  bg-gradient-to-tr from-indigo-600 via-blue-400 to-gray-800 bg-clip-text text-transparent">
+                            Services
+                            </p>
+                        {services.map((service, index)=>(
+                            <span
+                            className="text-gray-700"
+                            key={index}>
+                                {service}
+                            </span>
+                        ))}
+                        </section>
 
-                    <div className="space-x-5 p-10 flex items-center justify-center mt-10">
-                    <Link href={`/`} className="p-3 border rounded-full bg-gray-900 hover:bg-gray-800">Go to projects</Link> 
-                    <Link href={`/`}  className="p-3 border rounded-full bg-gray-900 hover:bg-gray-800">Go to about me</Link> 
-                    </div>
+                <section className='custom-scrollbar m-auto border rounded-md h-32 w-3/6 p-2 flex flex-col items-center'>
+
+                    {/* Hard Skills */}
+                    <p className="text-center text-xl font-semibold mb-2">My Hard Skills</p>
+                    <ul className="list-inside text-center text-gray-700">
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Node.js</li>
+                        <li>Tailwind CSS</li>
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Node.js</li>
+                        <li>Tailwind CSS</li>
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Node.js</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </section>
+                </div>
+
 
             </section>
         </div>

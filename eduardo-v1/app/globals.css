@@ -121,7 +121,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #514f4f; /* Cor da trilha da barra de rolagem */
 }
 
-@keyframes moving {
+@keyframes scrollInfinite {
   0% {
     transform: translateX(0);
   }
@@ -130,12 +130,39 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.animate-moving {
+.animate-scrollInfinite {
   display: flex;
-  animation: moving 15s linear infinite; 
+  animation: scrollInfinite 35s linear infinite;
+  white-space: nowrap;
 }
 
-.animate-moving:hover{
-animation: none;
+.scroll-container {
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  height: 100%;
+}
 
+.scroll-container:before,
+.scroll-container:after {
+  position: absolute;
+  top: 0;
+  width: 100px; /* Ajuste conforme necessário */
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.scroll-container:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(1, 5, 25));
+}
+
+.scroll-container:after {
+  right: 0;
+  background: linear-gradient(to right  , rgba(255, 255, 255, 0),rgb(1, 5, 25));
+}
+
+.scroll-container:hover .animate-scrollInfinite {
+  animation-play-state: paused;
 }
