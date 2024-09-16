@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation"
 import Logo from "../ui/logo"
 import { routes } from "@/constants/routes"
 import Button from "../ui/button"
+import { motion } from "framer-motion"
+
 
 
 
@@ -56,7 +58,13 @@ const NavMobile = () => {
 
   
     return (
-        <header className="sticky top-0 left-0 right-0  p-4 shadow-md z-50 border-b backdrop-blur bg-inherit " >
+        <motion.header
+        initial={{opacity:0, y: -20}}
+        whileInView={{opacity:1, y:0}}
+        exit={{opacity:0}}
+        transition={{duration:0.5}}
+        
+        className="sticky top-0 left-0 right-0  p-4 shadow-md z-50 border-b backdrop-blur bg-inherit " >
         <nav className="flex justify-between items-center w-[92%] mx-auto select-none">
         <Link href={'/'}>
         <Logo.mobile/>
@@ -103,7 +111,7 @@ const NavMobile = () => {
                 </Drawer.Portal>
             </Drawer.Root>
         </nav>
-    </header>
+    </motion.header>
     )
 
 }

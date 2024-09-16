@@ -1,15 +1,15 @@
-interface typeButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string; // Torne className opcional e use string com inicial minúscula
-  }
+type typeButton = {
+  className?: string;
+  children: React.ReactNode;
+  // outros props que o botão pode ter
+};
 
-
-const Button = ({className, children,...props}:typeButton) => {
-    <button
-    className={`p-2 m-auto w-4/6 border rounded-md ${className}`}
-    {...props}
-    >
-    {children}
+const Button = ({ className, children, ...props }: typeButton) => {
+  return (
+    <button className={className} {...props}>
+      {children}
     </button>
-}
+  );
+};
 
-export default Button
+export default Button;
