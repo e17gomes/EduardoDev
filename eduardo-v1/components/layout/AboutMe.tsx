@@ -66,7 +66,7 @@ const AboutMe = () => {
           <Info size={14} />  Stacks
         </p>
       
-        <div className="h-36  bg-gray-800 select-none p-3 overflow-hidden flex items-center justify-center scroll-container w-full">
+        <div className="h-36  bg-gray-800 select-none p-3 overflow-hidden flex items-center justify-center scroll-container w-full z-0">
       <ul className="flex items-center justify-center space-x-4 animate-scrollInfinite h-40 p-4 min-w-[200%]">
         {[...TechIcons, ...TechIcons].map((icon, index) => (
           <li key={index} className="flex-shrink-0 drop-shadow-md">

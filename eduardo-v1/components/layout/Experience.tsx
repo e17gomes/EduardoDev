@@ -40,7 +40,7 @@ const Experience = () => {
             company: 'MiccoDev',
             describe: 'Developed and implemented complete solutions for e-commerce and institutional websites, using React.js, Next.js, and Node.js with Express. Managed the full development lifecycle, ensuring interactive and high-performance solutions that meet client needs.',
             time: 'Jun 2024 - Jul 2024',
-            techs: 'React.js | Next.js | TypeScript | Node.js | Express'
+            techs: 'React | Next.js | TypeScript | Node | Express'
         },];
 
     const [activeIndex, setActiveIndex] = useState<number | null>(null);

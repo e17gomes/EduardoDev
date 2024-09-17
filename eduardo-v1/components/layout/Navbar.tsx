@@ -18,7 +18,12 @@ const NavDesktop = () => {
     const pathname = usePathname()
         
     return (
-        <header className="sticky top-0 border-b p-6 flex items-center justify-between select-none bg-inherit/90 backdrop-blur z-50">
+        <motion.header
+        initial={{opacity:0, y: -20}}
+        whileInView={{opacity:1, y:0}}
+        exit={{opacity:0}}
+        transition={{duration:0.5}}
+        className="sticky top-0 border-b p-6 flex items-center justify-between select-none bg-inherit/90 backdrop-blur z-50">
             <nav className="px-2 flex items-center gap-10">
                 <Link href={'/'} >
                 <Logo.desk/>
@@ -48,7 +53,7 @@ const NavDesktop = () => {
                 </Link>
              </button>
             </nav>
-        </header>
+        </motion.header>
     )
 }
 
