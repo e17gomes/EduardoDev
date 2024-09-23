@@ -6,7 +6,7 @@ import { Github, Linkedin, Menu, X, } from "lucide-react"
 import { usePathname } from "next/navigation"
 import Logo from "../ui/logo"
 import { routes } from "@/constants/routes"
-import Button from "../ui/button"
+import { Button }from "../ui/button"
 import { motion } from "framer-motion"
 
 
@@ -102,7 +102,6 @@ const NavMobile = () => {
                             <Button>
                                 Login
                             </Button>
-                            <button className="p-2 m-auto w-4/6 border rounded-md">LOGIN 2</button>
                         </section>
                         {routes.map((route,key)=>(<Link
                         onClick={() => setIsOpen(false)}
