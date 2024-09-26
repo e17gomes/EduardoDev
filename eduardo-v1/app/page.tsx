@@ -6,7 +6,7 @@ import { Main } from "@/components/layout/Main";
 
 export default function Home() {
   return (
-      <main className="container min-h-screen">
+      <main className="container flex items-center min-h-[88dvh]">
      <Main/>
       </main>
   );

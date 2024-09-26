@@ -28,17 +28,20 @@ const experiences = [
 
 const techStack = [
   {
+    type: "Languages",
+    techs:["JavaScript",
+      "TypeScript"]
+  },
+  {
     type: "Front-End",
     techs: [
       "React",
       "Next.js",
-      "JavaScript",
-      "TypeScript",
       "HTML",
       "CSS",
       "Tailwind CSS",
-      "Bootstrap",
-      "Styled Components",
+      // "Bootstrap",
+      // "Styled Components",
     ],
   },
   {
@@ -59,4 +62,4 @@ const techStack = [
   },
 ];
 
-export { services, experiences };
+export { services, experiences, techStack };

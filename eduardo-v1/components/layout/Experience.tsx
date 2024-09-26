@@ -3,41 +3,11 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { useState } from "react";
 import Exp from "../types/typesExperience";
-import { services, experiences } from "@/constants/experience.";
-import { ServiceDialog } from "../ui/service";
+import { services, experiences, techStack } from "@/constants/experience.";
+import { Dialog } from "../ui/dialog-xp";
+import { AccordionXP } from "../ui/accordion-xp";
 
 const Experience = () => {
-
-
-  
-
-    // const [activeIndex, setActiveIndex] = useState<number | null>(null);
-    // const handleActive = (index: number) => {
-    //     setActiveIndex(prevIndex => (prevIndex === index ? null : index));
-    // };
-
-    // const CardXp: React.FC<Exp> = ({ className, role, company, describe, time, techs, isActive, onToggle }) => (
-    //     <div className={`${className} mt-5 mb-10 px-4 sm:px-6 lg:px-8`}>
-    //         <h3
-    //             onClick={onToggle}
-    //             className={`cursor-pointer text-center text-xl sm:text-2xl lg:text-3xl font-bold mb-2 `}
-    //         >
-    //             {role}
-    //             <span className={`ml-2 text-white/85  ${isActive ? 'text-blue-500 ' : 'opacity-85'}`}>
-    //                 {!isActive ? '+' : '-'}
-    //             </span>
-    //         </h3>
-    //         <article className={`${!isActive ? 'hidden' : 'block'} transition-all duration-300 ease-in-out text-center`}>
-    //             <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold mt-2">{company}</h4>
-    //             <span className="block text-sm sm:text-base lg:text-lg mt-1">{describe}</span>
-    //             <span className="block text-sm sm:text-base lg:text-lg mt-1 text-gray-500">{time}</span>
-    //             <div className="mt-2">
-    //                 <h5 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-600">Tecnologias:</h5>
-    //                 <span className="block text-sm sm:text-base lg:text-lg mt-1 text-gray-500">{techs}</span>
-    //             </div>
-    //         </article>
-    //     </div>
-    //);
 
     return (
         <div className="p-5 grid justify-center w-full  mx-auto  min-h-[87dvh]">
@@ -46,28 +16,53 @@ const Experience = () => {
             </h1>
 
             <section className="w-full">
-                {/* <>
-                    {experiences.map((exp, index) => (
-                        <CardXp
-                            key={index}
-                            role={exp.role}
-                            company={exp.company}
-                            describe={exp.describe}
-                            time={exp.time}
-                            techs={exp.techs}
-                            isActive={activeIndex === index}
-                            onToggle={() => handleActive(index)}
-                        />
-                    ))}
-                </> */}
-                <div className="flex flex-wrap gap-2">
 
-                    <ServiceDialog />
-                    <ServiceDialog />
-                    <ServiceDialog />
+                {experiences.map((experience, index) => (
+                    <AccordionXP key={index} title={experience.role}>
+                        <p className="flex items-center font-semibold gap-2 text-blue-400">
+                            {experience.company}
+                            <span className="text-gray-500">
+
+                                {experience.time}
+                            </span>
+                        </p>
+
+                        <span className="w-40">
+                            {experience.describe}
+                        </span>
+
+                    </AccordionXP>
+                ))}
+
+                <div className="flex flex-wrap gap-2 mt-5">
+                    <Dialog title="Service">
+                        {services.map((service, index) => (
+                            <span className="flex flex-col" key={index}>
+                                <span key={index}>
+                                    {service}
+                                </span>
+                            </span>
+                        ))}
+                    </Dialog>
+
+                    <Dialog title="Techs">
+                        {techStack.map((tech, index) => (
+                            <span className="grid grid-cols-2" key={index}>
+                                <span className="underline font-extrabold">
+                                    {tech.type}
+                                </span>
+                                <span className=" flex flex-col">
+                                    {tech.techs.map((techItem, techIndex) => (
+                                        <span key={techIndex}>{techItem}</span>
+                                    ))}
+                                    <hr />
+                                </span>
+                            </span>
+                        ))}
+                    </Dialog>
                 </div>
 
-           
+
             </section>
         </div>
     )

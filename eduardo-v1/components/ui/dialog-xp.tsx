@@ -12,23 +12,24 @@ import {
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
   import { Button } from "@/components/ui/button"
-   
-  export function ServiceDialog() {
+  
+  interface TypeService {
+    children: React.ReactNode,
+    title:string
+  }
+
+  export function Dialog({children, title}:TypeService) {
     return (
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button variant="outline" className="p-6">Services</Button>
+          <Button variant="outline" className="p-6">{title}</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Services</AlertDialogTitle>
+            <AlertDialogTitle>{title}</AlertDialogTitle>
             <AlertDialogDescription>
              
-                {services.map((service,index)=>(
-                    <li key={index}>
-                        {service}
-                    </li>
-                ))}
+            {children}
 
             </AlertDialogDescription>
           </AlertDialogHeader>
