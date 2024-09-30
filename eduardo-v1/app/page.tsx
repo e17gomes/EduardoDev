@@ -1,4 +1,3 @@
-import Experience from "@/components/layout/Experience";
 import { Main } from "@/components/layout/Main";
 
 
