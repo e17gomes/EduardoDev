@@ -1,5 +1,5 @@
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { BriefcaseBusiness, Download, Info } from "lucide-react";
+import { BriefcaseBusiness, Download, Info, Files } from "lucide-react";
 import Link from "next/link";
 import { HireMe } from "./HireMe";
 
@@ -32,7 +32,7 @@ export function Main() {
       </Link>
       <Link target="_blank" className=" w-fit flex justify-center" href="/Currículo%20Eduardo%20Gomes%20v.08.pdf">
         <button className="bg-inherit border border-double rounded-full p-3 flex items-center justify-center gap-2  hover:bg-gray-900 ease-in-out duration-100 w-40 hover:outline-double outline-blue-200 cursor-pointer">
-          <Download /> Projects
+          <Files/> Projects
         </button> 
       </Link>
       </div>

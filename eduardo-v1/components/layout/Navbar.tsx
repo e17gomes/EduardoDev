@@ -48,7 +48,7 @@ const NavDesktop = () => {
                 </Link>
              </button>
              <button className="border hover:bg-gray-800 rounded-md hover:rounded-br-xl ease-in-out duration-500 h-[1.7rem] w-[1.7rem] flex items-center justify-center">
-                <Link className="text-center" href={'https://www.github.com/e17gomes'} target="_blank">
+                <Link className="text-center" href={'https://www.linkedin.com/in/eduardo-gomes-da-silva-098735260/'} target="_blank">
                 <Linkedin size={19}/> 
                 </Link>
              </button>
@@ -99,7 +99,7 @@ const NavMobile = () => {
                  <Drawer.Content aria-describedby={'menu'} className="flex flex-col gap-10 px-4 h-full w-4/5 fixed bottom-0 top-[4.1rem] right-0 border-l bg-inherit">
                     <Drawer.Title></Drawer.Title>
                         <section className="flex flex-col space-y-3 ">
-                            <Button>
+                            <Button disabled>
                                 Login
                             </Button>
                         </section>
@@ -108,9 +108,9 @@ const NavMobile = () => {
                         href={route.link}
                         key={key} 
                         className="border-b border-blue-400 py-3 px-1 opacity-50 hover:opacity-100">{route.route}</Link>))}
-                        <p className='m-auto my-20 p-4 bg-gray-900 rounded-full pulse w-fit border-double border opacity-50 hover:opacity-100 '>
+                        <Link target="_parent" href={"https://api.whatsapp.com/send?phone=5511977970984&text=Eai%20Eduardo"} className='m-auto my-20 p-4 bg-gray-900 rounded-full pulse w-fit border-double border opacity-50 hover:opacity-100 '>
                             Contate-me
-                        </p>
+                        </Link>
                     </Drawer.Content>
                 </Drawer.Portal>
             </Drawer.Root>

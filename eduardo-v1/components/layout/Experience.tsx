@@ -35,7 +35,7 @@ const Experience = () => {
                 ))}
 
                 <div className="flex flex-wrap gap-2 mt-5">
-                    <Dialog title="Service">
+                    <Dialog title="Services">
                         {services.map((service, index) => (
                             <span className="flex flex-col" key={index}>
                                 <span key={index}>
@@ -51,11 +51,11 @@ const Experience = () => {
                                 <span className="underline font-extrabold">
                                     {tech.type}
                                 </span>
-                                <span className=" flex flex-col">
+                                <span className="border-b  flex flex-col">
                                     {tech.techs.map((techItem, techIndex) => (
                                         <span key={techIndex}>{techItem}</span>
                                     ))}
-                                    <hr />
+                                
                                 </span>
                             </span>
                         ))}

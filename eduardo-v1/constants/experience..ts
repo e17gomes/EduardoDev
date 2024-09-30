@@ -40,8 +40,8 @@ const techStack = [
       "HTML",
       "CSS",
       "Tailwind CSS",
-      // "Bootstrap",
-      // "Styled Components",
+      "Bootstrap",
+      "Styled Components",
     ],
   },
   {
